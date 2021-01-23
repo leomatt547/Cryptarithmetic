@@ -1,0 +1,10 @@
+ABC
+DEF
+GHI
+JKL+
+-------
+ALFABET
+
+TIDAK ADA SOLUSI YANG MUNGKIN
+Waktu yang dibutuhkan adalah 0.0 detik
+Percobaan yang telah dilakukan untuk menemukan kombinasi cryptarithhmetic : 0 kali
