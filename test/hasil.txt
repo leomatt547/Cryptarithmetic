@@ -1,15 +1,13 @@
-FORTY
-  TEN
-  TEN+
+ MEMO
+ FROM+
 ------
-SIXTY
+HOMER
 
 SOLUSI YANG MUNGKIN ADALAH:
-29786
-  850
-  850 +
+ 8485
+ 7358 +
 --------
-31486
+15843
 
-Waktu yang dibutuhkan: 227.684 detik
-Total Percobaan Cryptarithhmetic: 2540160 kali
+Waktu yang dibutuhkan: 4.72 detik
+Total Percobaan Cryptarithhmetic: 105840 kali

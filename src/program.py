@@ -107,7 +107,7 @@ def converttxt(namafile, arr1, waktu, percobaan, path): #ubah ke file txt
     sys.stdout.close()
 
 #Program Utama
-nama = "input11.txt" #nama file <SILAHKAN UBAH NAMA FILE DI SINI>
+nama = "input9.txt" #nama file <SILAHKAN UBAH NAMA FILE DI SINI>
 namafile = os.path.join(path , "test" , nama) 
 data,huruf = bacafile(namafile) #membaca input file txt
 print("")
