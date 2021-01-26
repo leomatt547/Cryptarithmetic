@@ -1,0 +1,15 @@
+FORTY
+  TEN
+  TEN+
+------
+SIXTY
+
+SOLUSI YANG MUNGKIN ADALAH:
+29786
+  850
+  850 +
+--------
+31486
+
+Waktu yang dibutuhkan: 227.684 detik
+Total Percobaan Cryptarithhmetic: 2540160 kali

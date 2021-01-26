@@ -6,6 +6,10 @@
 
 import sys
 import time
+import os
+from pathlib import Path
+
+path = os.path.dirname(Path(__file__).absolute().parent)
 
 def find_letter(let, lst):
     #mengecek apakah ada huruf yang sama di dalam array sebelum dimasukkan
@@ -64,8 +68,8 @@ def solusi(data, huruf):
     else:
         for i in permutasi(angka,len(huruf)):
             coba = dict(zip(huruf, i)) #kombinasi dictionary huruf dan pasangan angka yang benar
-            percobaan += 1 #menghitung jumlah percobaannya
             if all((coba[kata[0]] > 0) for kata in data): #membatasi huruf awal tidak boleh 0
+                percobaan += 1 #menghitung jumlah percobaannya
                 bilangan = [katangka(kata, coba) for kata in data] #memngubah operan -> kata jadi integer
                 if sum(bilangan[:len(data)-1]) == bilangan[len(data)-1]: #bila hasilnya cocok
                     jawab.append(bilangan)
@@ -93,24 +97,25 @@ def tampilkanLayar(arr1):
                     print(str(arr1[i][j]))
             print("")
 
-def converttxt(namafile, arr1, waktu, percobaan): #ubah ke file txt
-    sys.stdout = open("hasil.txt", "w")
+def converttxt(namafile, arr1, waktu, percobaan, path): #ubah ke file txt
+    sys.stdout = open(os.path.join(path , "test" ,"hasil.txt"), "w")
     masukkanInput(namafile)
     print("")
     tampilkanLayar(arr1)
-    print("Waktu yang dibutuhkan adalah", waktu, "detik")
-    print("Percobaan yang telah dilakukan untuk menemukan kombinasi cryptarithhmetic :", percobaan, "kali")
+    print("Waktu yang dibutuhkan:", waktu, "detik")
+    print("Total Percobaan Cryptarithhmetic:", percobaan, "kali")
     sys.stdout.close()
 
 #Program Utama
-awal = time.time() #waktu mulai
-namafile = "input.txt" #nama file
+nama = "input11.txt" #nama file <SILAHKAN UBAH NAMA FILE DI SINI>
+namafile = os.path.join(path , "test" , nama) 
 data,huruf = bacafile(namafile) #membaca input file txt
 print("")
+awal = time.time() #waktu mulai
 arr1, percobaan = solusi(data, huruf)
 tampilkanLayar(arr1)
 akhir = time.time() #waktu akhir
-waktu = float(akhir-awal) 
-print("Waktu yang dibutuhkan adalah", waktu, "detik")
-print("Percobaan yang telah dilakukan untuk menemukan kombinasi cryptarithhmetic :", percobaan, "kali")
-converttxt(namafile,arr1,waktu,percobaan) #menyalin ke file txt hasil
+waktu = round(float(akhir-awal), 3) 
+print("Waktu yang dibutuhkan:", waktu, "detik")
+print("Total Percobaan Cryptarithhmetic:", percobaan, "kali")
+converttxt(namafile,arr1,waktu,percobaan,path) #menyalin ke file txt hasil
